@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <title>Roll & Dice</title>
+  </head>
+  <body class="h-full font-lato font-light">
+    <main class="h-full flex flex-row">
+      <!-- PLAYER 1 -->
+      <section
+        class="h-full w-1/2 flex flex-col justify-around items-center bg-gray-300"
+      >
+        <div class="flex flex-col relative">
+          <h2 class="text-4xl p-4">PLAYER 1</h2>
+          <p class="text-6xl text-center font-extralight text-red-600">43</p>
+          <img
+            src="/images/red-dot.png"
+            alt="point rouge"
+            class="w-3 h-3 absolute -right-5 top-8"
+          />
+        </div>
+        <div class="bg-red-600 px-7">
+          <h3 class="p-4 text-xs">CURRENT</h3>
+          <p class="mb-3 text-center text-2xl text-gray-300">11</p>
+        </div>
+      </section>
+      <!-- SECTION DU MILIEU -->
+      <section
+        class="bg-transparent absolute w-30 h-full inset-x-[45%] flex flex-col justify-evenly"
+      >
+        <button class="flex">
+          <img
+            src="/images/plus.png"
+            alt="bouton nouvelle partie"
+            class="w-6 h-6"
+          />
+          <p class="ml-4">NEW GAME</p>
+        </button>
+        <div class="bg-gray-500 h-30 w-30">coucou</div>
+        <button class="flex order-5">
+          <img
+            src="/images/restart.png"
+            alt="bouton lancer les dés"
+            class="w-6 h-6"
+          />
+          <p class="ml-4">ROLL DICE</p>
+        </button>
+        <button class="flex">
+          <img
+            src="/images/hold.png"
+            alt="bouton stocker les points du round"
+            class="w-6 h-6"
+          />
+          <p class="ml-4">HOLD</p>
+        </button>
+      </section>
+      <!-- PLAYER 2 -->
+      <section class="h-full w-1/2 flex flex-col justify-around items-center">
+        <div class="flex flex-col relative">
+          <h2 class="text-4xl p-4 font-extralight">PLAYER 2</h2>
+          <p class="text-6xl text-center font-extralight text-red-600">43</p>
+          <img
+            src="/images/red-dot.png"
+            alt="point rouge"
+            class="w-3 h-3 absolute -right-5 top-8 hidden"
+          />
+        </div>
+        <div class="bg-red-600 px-7">
+          <h3 class="p-4 text-xs">CURRENT</h3>
+          <p class="mb-3 text-center text-2xl text-white">11</p>
+        </div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
