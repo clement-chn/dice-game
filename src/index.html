@@ -35,7 +35,7 @@
       </section>
       <!-- SECTION DU MILIEU -->
       <section
-        class="bg-transparent absolute w-30 h-full inset-x-[45%] flex flex-col justify-evenly"
+        class="bg-transparent absolute w-30 h-full inset-x-[45%] flex flex-col justify-around"
       >
         <button class="flex">
           <img
@@ -46,22 +46,24 @@
           <p class="ml-4">NEW GAME</p>
         </button>
         <div class="bg-gray-500 h-30 w-30">coucou</div>
-        <button class="flex order-5">
-          <img
-            src="/images/restart.png"
-            alt="bouton lancer les dés"
-            class="w-6 h-6"
-          />
-          <p class="ml-4">ROLL DICE</p>
-        </button>
-        <button class="flex">
-          <img
-            src="/images/hold.png"
-            alt="bouton stocker les points du round"
-            class="w-6 h-6"
-          />
-          <p class="ml-4">HOLD</p>
-        </button>
+        <div>
+          <button class="flex order-5 mb-7">
+            <img
+              src="/images/restart.png"
+              alt="bouton lancer les dés"
+              class="w-6 h-6"
+            />
+            <p class="ml-4">ROLL DICE</p>
+          </button>
+          <button class="flex mb-3">
+            <img
+              src="/images/hold.png"
+              alt="bouton stocker les points du round"
+              class="w-6 h-6"
+            />
+            <p class="ml-4">HOLD</p>
+          </button>
+        </div>
       </section>
       <!-- PLAYER 2 -->
       <section class="h-full w-1/2 flex flex-col justify-around items-center">
