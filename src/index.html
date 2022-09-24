@@ -34,6 +34,7 @@
         </div>
       </section>
       <!-- SECTION DU MILIEU -->
+      <!-- bouton new game -->
       <section
         class="bg-transparent absolute w-30 h-full inset-x-[45%] flex flex-col justify-around"
       >
@@ -41,17 +42,72 @@
           <img
             src="/images/plus.png"
             alt="bouton nouvelle partie"
-            class="w-6 h-6"
+            class="w-6 h-6 ml-2"
           />
           <p class="ml-4">NEW GAME</p>
         </button>
-        <div class="bg-gray-500 h-30 w-30">coucou</div>
-        <div>
-          <button class="flex order-5 mb-7">
+        <!-- dé -->
+        <div
+          class="bg-white shadow-2xl h-20 w-20 grid grid-cols-3 justify-items-center items-center ml-8"
+        >
+          <!-- 1 -->
+          <img
+            src="/images/red-dot.png"
+            alt="point rouge"
+            class="w-3 h-3 relative left-1 top-1 invisible"
+          />
+          <!-- 2 -->
+          <img
+            src="/images/red-dot.png"
+            alt="point rouge"
+            class="w-3 h-3 relative top-1 invisible"
+          />
+          <!-- 3 -->
+          <img
+            src="/images/red-dot.png"
+            alt="point rouge"
+            class="w-3 h-3 relative top-1 right-1 invisible"
+          />
+          <!-- 4 -->
+          <img
+            src="/images/red-dot.png"
+            alt="point rouge"
+            class="w-3 h-3 relative left-1 invisible"
+          />
+          <!-- 5 -->
+          <img src="/images/red-dot.png" alt="point rouge" class="w-3 h-3" />
+          <!-- 6 -->
+          <img
+            src="/images/red-dot.png"
+            alt="point rouge"
+            class="w-3 h-3 relative right-1 invisible"
+          />
+          <!-- 7 -->
+          <img
+            src="/images/red-dot.png"
+            alt="point rouge"
+            class="w-3 h-3 relative left-1 bottom-1 invisible"
+          />
+          <!-- 8 -->
+          <img
+            src="/images/red-dot.png"
+            alt="point rouge"
+            class="w-3 h-3 relative bottom-1 invisible"
+          />
+          <!-- 9 -->
+          <img
+            src="/images/red-dot.png"
+            alt="point rouge"
+            class="w-3 h-3 relative right-1 bottom-1 invisible"
+          />
+        </div>
+        <!-- boutons roll dice & hold -->
+        <div class="h-30">
+          <button class="flex mb-7">
             <img
               src="/images/restart.png"
               alt="bouton lancer les dés"
-              class="w-6 h-6"
+              class="w-6 h-6 ml-2"
             />
             <p class="ml-4">ROLL DICE</p>
           </button>
@@ -59,9 +115,9 @@
             <img
               src="/images/hold.png"
               alt="bouton stocker les points du round"
-              class="w-6 h-6"
+              class="w-5 h-5 ml-7"
             />
-            <p class="ml-4">HOLD</p>
+            <p class="ml-3">HOLD</p>
           </button>
         </div>
       </section>
