@@ -14,12 +14,12 @@
     <title>Roll & Dice</title>
   </head>
   <body class="h-full font-lato font-light">
-    <main class="h-full flex flex-col sm:flex-row">
+    <main class="absolute sm:static h-full w-full flex flex-col sm:flex-row">
       <!-- PLAYER 1 -->
       <section
-        class="h-1/2 w-full sm:h-full sm:w-1/2 flex flex-col justify-around items-center bg-gray-300"
+        class="h-1/2 w-full sm:h-full sm:w-1/2 flex flex-col sm:justify-around items-center bg-gray-300"
       >
-        <div class="flex flex-col relative">
+        <div class="flex flex-col relative top-8 sm:top-0">
           <h2 class="text-4xl p-4">PLAYER 1</h2>
           <p class="text-6xl text-center font-extralight text-red-600">43</p>
           <img
@@ -28,7 +28,7 @@
             class="w-3 h-3 absolute -right-5 top-8"
           />
         </div>
-        <div class="bg-red-600 px-7">
+        <div class="bg-red-600 px-7 relative top-12 sm:top-0">
           <h3 class="p-4 text-xs">CURRENT</h3>
           <p class="mb-3 text-center text-2xl text-gray-300">11</p>
         </div>
@@ -36,42 +36,44 @@
 
       <!-- PLAYER 2 -->
       <section
-        class="h-1/2 w-full sm:h-full sm:w-1/2 flex flex-col justify-around items-center"
+        class="h-1/2 w-full sm:h-full sm:w-1/2 flex flex-col sm:justify-around items-center"
       >
-        <div class="flex flex-col relative">
+        <div class="flex flex-col relative relative top-8 sm:top-0">
           <h2 class="text-4xl p-4 font-extralight">PLAYER 2</h2>
-          <p class="text-6xl text-center font-extralight text-red-600">43</p>
+          <p class="text-6xl text-center font-extralight text-red-600">72</p>
           <img
             src="/images/red-dot.png"
             alt="point rouge"
             class="w-3 h-3 absolute -right-5 top-8 hidden"
           />
         </div>
-        <div class="bg-red-600 px-7">
+        <div class="bg-red-600 px-7 relative top-12 sm:top-0">
           <h3 class="p-4 text-xs">CURRENT</h3>
-          <p class="mb-3 text-center text-2xl text-white">11</p>
+          <p class="mb-3 text-center text-2xl text-white">0</p>
         </div>
       </section>
     </main>
     <!-- SECTION DU MILIEU -->
-    <section class="w-full bg-transparent flex justify-center items-center">
+    <section
+      class="relative sm:static h-full sm:h-0 sm:w-full bg-transparent flex flex-col sm:flex-row justify-center items-center"
+    >
       <div
         class="bg-transparent flex absolute sm:inset-y-[0] sm:w-40 sm:h-full sm:grid sm:grid-rows-3 sm:justify-items-center"
       >
         <!-- bouton new game -->
-        <div class="relative sm:top-8">
+        <div class="relative right-2 sm:right-0 top-4 sm:top-8">
           <button class="flex">
             <img
               src="/images/plus.png"
               alt="bouton nouvelle partie"
-              class="w-3 h-3 sm:w-6 sm:h-6 sm:ml-2"
+              class="w-6 h-6 sm:ml-2"
             />
-            <p class="text-xs sm:text-base sm:ml-4">NEW GAME</p>
+            <p class="text-base ml-4">NEW GAME</p>
           </button>
         </div>
         <!-- dé -->
         <div
-          class="bg-white shadow-2xl h-20 w-20 grid grid-cols-3 justify-items-center items-center relative bottom-12"
+          class="bg-white shadow-2xl h-20 w-20 grid grid-cols-3 justify-items-center items-center relative sm:bottom-12"
         >
           <!-- top left -->
           <img
@@ -125,22 +127,22 @@
           />
         </div>
         <!-- boutons roll dice & hold -->
-        <div class="relative">
-          <button class="flex relative sm:top-5 sm:-left-4 sm:mb-12">
+        <div class="relative left-2 sm:left-0">
+          <button class="flex relative top-4 sm:top-5 sm:-left-4 sm:mb-12">
             <img
               src="/images/restart.png"
               alt="bouton lancer les dés"
-              class="w-3 h-3 sm:w-6 sm:h-6 sm:ml-2"
+              class="w-6 h-6 ml-2"
             />
-            <p class="text-xs sm:text-base sm:ml-4">ROLL DICE</p>
+            <p class="text-base ml-4">ROLL DICE</p>
           </button>
-          <button class="flex sm:mb-3 relative sm:top-5 sm:left-1">
+          <button class="flex sm:mb-3 relative top-6 sm:top-5 left-3 sm:left-1">
             <img
               src="/images/hold.png"
               alt="bouton stocker les points du round"
-              class="w-2 h-2 sm:w-5 sm:h-5"
+              class="w-5 h-5"
             />
-            <p class="text-xs sm:text-base sm:ml-3">HOLD</p>
+            <p class="text-base ml-4 sm:ml-3">HOLD</p>
           </button>
         </div>
       </div>
