@@ -30,7 +30,7 @@ const makeItInvisible = (dicePoint) => {
 
 const dicePossibilities = (number) => {
     switch (number) {
-        case number === 2:
+        case 2:
             makeItVisible(topLeft);
             makeItVisible(bottomRight);
             makeItInvisible(topMiddle);
@@ -41,7 +41,52 @@ const dicePossibilities = (number) => {
             makeItInvisible(bottomLeft);
             makeItInvisible(bottom);
             break;
+        case 3:
+            makeItVisible(topRight);
+            makeItVisible(middle);
+            makeItVisible(bottomLeft);
+            makeItInvisible(topLeft);
+            makeItInvisible(topMiddle);
+            makeItInvisible(left);
+            makeItInvisible(right);
+            makeItInvisible(bottom);
+            makeItInvisible(bottomRight);
+            break;
+        case 4:
+            makeItVisible(topLeft);
+            makeItVisible(topRight);
+            makeItVisible(bottomLeft);
+            makeItVisible(bottomRight);
+            makeItInvisible(topMiddle);
+            makeItInvisible(left);
+            makeItInvisible(middle);
+            makeItInvisible(right);
+            makeItInvisible(bottom);
+            break;
+        case 5:
+            makeItVisible(topLeft);
+            makeItVisible(topRight);
+            makeItVisible(middle);
+            makeItVisible(bottomLeft);
+            makeItVisible(bottomRight);
+            makeItInvisible(topMiddle);
+            makeItInvisible(left);
+            makeItInvisible(right);
+            makeItInvisible(bottom);
+            break;
+        case 6:
+            makeItVisible(topLeft);
+            makeItVisible(topRight);
+            makeItVisible(left);
+            makeItVisible(right);
+            makeItVisible(bottomLeft);
+            makeItVisible(bottomRight);
+            makeItInvisible(topMiddle);
+            makeItInvisible(middle);
+            makeItInvisible(bottom);
+            break;
         default:
+            console.log('je suis dans la fonction et cest default, number est ' + number);
             makeItVisible(middle);
             makeItInvisible(topLeft);
             makeItInvisible(topMiddle);
@@ -59,6 +104,5 @@ const dicePossibilities = (number) => {
 const rollDiceBtn = document.getElementById('roll-dice-btn');
 
 rollDiceBtn.addEventListener('click', () => {
-    dicePossibilities(2);
-    console.log('click!');
+    dicePossibilities(6);
 })
