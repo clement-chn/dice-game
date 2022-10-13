@@ -15,14 +15,12 @@ const bottomRight = document.getElementById('bottom-right');
 const makeItVisible = (dicePoint) => {
     if (dicePoint.classList.contains('invisible')) {
         dicePoint.classList.remove('invisible');
-        console.log('ce point est désormais visible');
     }
 }
 
 const makeItInvisible = (dicePoint) => {
     if (!dicePoint.classList.contains('invisible')) {
         dicePoint.classList.add('invisible');
-        console.log('ce point est désormais invisible');
     }
 }
 
@@ -99,10 +97,31 @@ const dicePossibilities = (number) => {
     }
 }
 
-// TESTS
+// Fonction qui trouve un chiffre entre un max et un min
+
+const findNumberBetweenRange = (max,min) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+// Bouton Roll Dice
 
 const rollDiceBtn = document.getElementById('roll-dice-btn');
 
 rollDiceBtn.addEventListener('click', () => {
-    dicePossibilities(6);
+    let diceNumber = findNumberBetweenRange(6,1);
+    dicePossibilities(diceNumber);
 })
+
+// Récupérer le score ROUND et GLOBAL du J1 et J2
+
+const playerOneGlobal = document.getElementById('playerone-global').textContent;
+const playerOneRound = document.getElementById('playerone-round').textContent;
+
+const playerTwoGlobal = document.getElementById('playertwo-global').textContent;
+const playerTwoRound = document.getElementById('playertwo-round').textContent;
+
+
+// Définir le current Player
+
+const playerOneRedDot = document.getElementById('playerone-reddot');
+const playerTwoRedDot = document.getElementById('playertwo-reddot');
