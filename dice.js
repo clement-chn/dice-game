@@ -103,25 +103,43 @@ const findNumberBetweenRange = (max,min) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-// Bouton Roll Dice
-
-const rollDiceBtn = document.getElementById('roll-dice-btn');
-
-rollDiceBtn.addEventListener('click', () => {
-    let diceNumber = findNumberBetweenRange(6,1);
-    dicePossibilities(diceNumber);
-})
-
 // Récupérer le score ROUND et GLOBAL du J1 et J2
 
-const playerOneGlobal = document.getElementById('playerone-global').textContent;
-const playerOneRound = document.getElementById('playerone-round').textContent;
+const playerOneGlobal = document.getElementById('playerone-global');
+const playerOneRound = document.getElementById('playerone-round');
 
-const playerTwoGlobal = document.getElementById('playertwo-global').textContent;
-const playerTwoRound = document.getElementById('playertwo-round').textContent;
+const playerTwoGlobal = document.getElementById('playertwo-global');
+const playerTwoRound = document.getElementById('playertwo-round');
 
 
 // Définir le current Player
 
 const playerOneRedDot = document.getElementById('playerone-reddot');
 const playerTwoRedDot = document.getElementById('playertwo-reddot');
+
+if (playerOneRedDot.classList.contains('hidden')) {
+    currentPlayer = 2;
+} else {
+    currentPlayer = 1;
+}
+
+console.log('le joueur actif est bien le ' + currentPlayer);
+
+// Bouton Roll Dice
+
+const rollDiceBtn = document.getElementById('roll-dice-btn');
+
+rollDiceBtn.addEventListener('click', () => {
+    let diceNumber = findNumberBetweenRange(6,1);
+    console.log('le numéro du dé est bien ' + diceNumber);
+    dicePossibilities(diceNumber);
+    let finalResult = diceNumber;
+    console.log('la variable finalResult est bien ' + finalResult);
+    if (currentPlayer === 1) {
+        console.log('le current Player est bien le 1');
+        console.log('le score du Player 1 est bien de' + playerOneRound.textContent);
+        playerOneRound.textContent = finalResult;
+    } else {
+        playerTwoRound.textContent = finalResult;
+    }
+})
