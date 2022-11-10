@@ -199,3 +199,26 @@ rollDiceBtn.addEventListener('click', () => {
         playerTwoRound.textContent = twoRoundScore;
     }
 })
+
+// Bouton Hold
+
+const holdBtn = document.getElementById('hold-btn');
+let oneGlobalScore = 0;
+let twoGlobalScore = 0;
+
+holdBtn.addEventListener('click', () => {
+    if (currentPlayer === 1) {
+        oneGlobalScore += oneRoundScore;
+        playerOneGlobal.textContent = oneGlobalScore;
+        oneRoundScore = 0;
+        playerOneRound.textContent = 0;
+        changePlayer(2);
+    } else {
+        twoGlobalScore += twoRoundScore;
+        playerTwoGlobal.textContent = twoGlobalScore;
+        twoRoundScore = 0;
+        playerTwoRound.textContent = 0;
+        changePlayer(1);
+    }
+})
+
