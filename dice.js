@@ -192,6 +192,8 @@ rollDiceBtn.addEventListener('click', () => {
         }
         playerTwoRound.textContent = twoRoundScore;
     }
+    console.log(oneGlobalScore);
+    console.log(twoGlobalScore);
 })
 
 // Bouton Hold
@@ -214,13 +216,17 @@ holdBtn.addEventListener('click', () => {
         playerTwoRound.textContent = 0;
         changePlayer(1);
     }
+    if (oneGlobalScore >= 100 || twoGlobalScore >= 100) {
+        console.log('fin du jeu normalement');
+        newGame();
+    }
 })
 
 // Bouton New Game
 
 const newGameBtn = document.getElementById('newgame-btn');
 
-newGameBtn.addEventListener('click', () => {
+const newGame = () => {
     oneGlobalScore = 0;
     twoGlobalScore = 0;
     oneRoundScore = 0;
@@ -232,7 +238,9 @@ newGameBtn.addEventListener('click', () => {
     playerTwoRound.textContent = 0;
     
     dicePossibilities(1);
-})
+}
 
-// Fin du jeu
+newGameBtn.addEventListener('click', () => {
+    newGame();
+})
 
