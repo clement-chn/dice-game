@@ -238,6 +238,7 @@ const newGame = () => {
     playerTwoRound.textContent = 0;
     
     dicePossibilities(1);
+    changePlayer(1);
 }
 
 newGameBtn.addEventListener('click', () => {
