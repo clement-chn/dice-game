@@ -116,11 +116,58 @@ const playerTwoRound = document.getElementById('playertwo-round');
 
 const playerOneRedDot = document.getElementById('playerone-reddot');
 const playerTwoRedDot = document.getElementById('playertwo-reddot');
+const playerOneTitle = document.getElementById('playerone-title');
+const playerTwoTitle = document.getElementById('playertwo-title');
+const playerOneSection = document.getElementById('playerone-section');
+const playerTwoSection = document.getElementById('playertwo-section');
+let currentPlayer = 1;
 
-if (playerOneRedDot.classList.contains('hidden')) {
+/* if (playerOneRedDot.classList.contains('hidden')) {
     currentPlayer = 2;
 } else {
     currentPlayer = 1;
+} */
+
+const changePlayer = (number) => {
+    if (number === 1) {
+        currentPlayer = 1;
+
+        if (playerOneRedDot.classList.contains('hidden')) {
+            playerOneRedDot.classList.remove('hidden');
+        }
+    
+        playerOneTitle.classList.remove('font-extralight');
+    
+        if (playerOneSection.classList.contains('bg-gray-300')) {
+            console.log('playerone a déjà le bg gray');
+        } else {
+            playerOneSection.classList.add('bg-gray-300');
+        }
+        
+        playerTwoRedDot.classList.add('hidden');
+    
+        if (playerTwoTitle.classList.contains('font-extralight')) {
+            console.log('playertwo a déjà la classe font-extralight');
+        } else {
+            playerTwoTitle.classList.add('font-extralight');
+        }
+    
+        if (playerTwoSection.classList.contains('bg-gray-300')) {
+            playerTwoSection.classList.remove('bg-gray-300');
+        }
+            else {
+                console.log('playertwo n\'a pas le bg gris');
+            }
+    } else {
+        currentPlayer = 2;
+
+        playerOneRedDot.classList.add('hidden');
+        playerOneTitle.classList.add('font-extralight');
+        playerOneSection.classList.remove('bg-gray-300');
+        playerTwoRedDot.classList.remove('hidden');
+        playerTwoTitle.classList.remove('font-extralight');
+        playerTwoSection.classList.add('bg-gray-300');
+    }
 }
 
 console.log('le joueur actif est bien le ' + currentPlayer);
@@ -128,18 +175,27 @@ console.log('le joueur actif est bien le ' + currentPlayer);
 // Bouton Roll Dice
 
 const rollDiceBtn = document.getElementById('roll-dice-btn');
+let oneRoundScore = 0;
+let twoRoundScore = 0;
 
 rollDiceBtn.addEventListener('click', () => {
     let diceNumber = findNumberBetweenRange(6,1);
-    console.log('le numéro du dé est bien ' + diceNumber);
     dicePossibilities(diceNumber);
-    let finalResult = diceNumber;
-    console.log('la variable finalResult est bien ' + finalResult);
     if (currentPlayer === 1) {
-        console.log('le current Player est bien le 1');
-        console.log('le score du Player 1 est bien de' + playerOneRound.textContent);
-        playerOneRound.textContent = finalResult;
+        if (diceNumber === 1) {
+            oneRoundScore = 0;
+            changePlayer(2);
+        } else {
+            oneRoundScore += diceNumber;
+        }
+        playerOneRound.textContent = oneRoundScore;
     } else {
-        playerTwoRound.textContent = finalResult;
+        if (diceNumber === 1) {
+            twoRoundScore = 0;
+            changePlayer(1);
+        } else {
+            twoRoundScore += diceNumber;
+        }
+        playerTwoRound.textContent = twoRoundScore;
     }
 })
