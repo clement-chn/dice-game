@@ -122,12 +122,6 @@ const playerOneSection = document.getElementById('playerone-section');
 const playerTwoSection = document.getElementById('playertwo-section');
 let currentPlayer = 1;
 
-/* if (playerOneRedDot.classList.contains('hidden')) {
-    currentPlayer = 2;
-} else {
-    currentPlayer = 1;
-} */
-
 const changePlayer = (number) => {
     if (number === 1) {
         currentPlayer = 1;
@@ -221,4 +215,24 @@ holdBtn.addEventListener('click', () => {
         changePlayer(1);
     }
 })
+
+// Bouton New Game
+
+const newGameBtn = document.getElementById('newgame-btn');
+
+newGameBtn.addEventListener('click', () => {
+    oneGlobalScore = 0;
+    twoGlobalScore = 0;
+    oneRoundScore = 0;
+    twoRoundScore = 0;
+
+    playerOneGlobal.textContent = 0;
+    playerTwoGlobal.textContent = 0;
+    playerOneRound.textContent = 0;
+    playerTwoRound.textContent = 0;
+    
+    dicePossibilities(1);
+})
+
+// Fin du jeu
 
